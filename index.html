@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Learn - Unlock Your Potential</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* CSS STYLES */
+        :root {
+            --primary-color: #4CAF50; /* Fresh green for primary actions */
+            --secondary-color: #1976D2; /* Strong blue for emphasis */
+            --text-dark: #333;
+            --text-light: #666;
+            --background-light: #f4f7f6;
+            --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .navbar nav a {
+            margin-left: 25px;
+            font-weight: 600;
+        }
+
+        .log-in-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .log-in-btn:hover {
+            background-color: #1565C0;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #e0f2f1, #b3e5fc);
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .explore-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .explore-btn:hover {
+            background-color: #43A047;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            max-width: 50%;
+        }
+
+        /* Placeholder image style for the design concept */
+        .hero-image-placeholder {
+            width: 100%;
+            min-height: 350px;
+            background: url('https://via.placeholder.com/600x400/CFD8DC/455A64?text=Students+Collaborating') no-repeat center center/cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+        }
+
+
+        /* --- Course Categories --- */
+        .category-section {
+            background-color: var(--background-light);
+        }
+
+        .categories-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 120px;
+            padding: 20px 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            background-color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .category-item i {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .category-item span {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* --- Featured Courses --- */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-icon {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .course-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #FFC107; /* Amber star color */
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .enroll-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background-color: #1565C0;
+        }
+
+        /* --- Testimonials --- */
+        .testimonials-section {
+            background-color: var(--background-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            font-style: italic;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .testimonial-card p {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-card footer {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        /* --- CTA Footer --- */
+        .cta-footer {
+            text-align: center;
+            padding: 60px 5%;
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .cta-footer h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+
+        .view-all-btn {
+            background-color: white;
+            color: var(--secondary-color);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .view-all-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+
+        .social-links a {
+            color: #ecf0f1;
+            margin-left: 15px;
+            font-size: 1.2em;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Alpha **Learn**</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#">About Us</a>
+            <a href="#testimonials">Testimonials</a>
+        </nav>
+        <button class="log-in-btn">Log In / Sign Up</button>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Unlock Your **Potential**</h1>
+            <p>Learn Anything, Anywhere, Anytime.</p>
+            <button class="explore-btn">Explore Courses</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-placeholder" role="img" aria-label="Group of students collaborating on a project."></div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="category-section">
+        <h2>Course **Categories**</h2>
+        <div class="categories-grid">
+            <div class="category-item">
+                <i class="fas fa-code"></i>
+                <span>Development</span>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-palette"></i>
+                <span>Design</span>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Business</span>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Marketing</span>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-database"></i>
+                <span>Data Science</span>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="courses" class="featured-courses">
+        <h2>**Featured** Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Full-Stack Web **Development**</h3>
+                <p>Build dynamic websites from scratch.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i> 4.9 (120 reviews)
+                </div>
+                <button class="enroll-btn" data-course="Web Dev">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon"><i class="fas fa-magic"></i></div>
+                <h3>Graphic Design **Masterclass**</h3>
+                <p>Master Adobe tools and design principles.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i> 4.7 (95 reviews)
+                </div>
+                <button class="enroll-btn" data-course="Graphic Design">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Financial **Accounting**</h3>
+                <p>Understand balance sheets and cash flow.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i> 4.8 (88 reviews)
+                </div>
+                <button class="enroll-btn" data-course="Accounting">Enroll Now</button>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>What Our **Students** Say</h2>
+        <div class="testimonials-grid">
+            <blockquote class="testimonial-card">
+                <p>"Alpha Learn transformed my career. The Full-Stack course was incredibly practical and well-structured!"</p>
+                <footer>- **Anya S.** (Software Engineer)</footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card">
+                <p>"The tutors were so supportive. I finally feel confident in my design skills thanks to the Masterclass."</p>
+                <footer>- **Mark L.** (Freelance Designer)</footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card">
+                <p>"Excellent value for money. The content is world-class and the learning platform is easy to use."</p>
+                <footer>- **Chen I.** (Financial Analyst)</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="cta-footer">
+        <h3>Ready to Start Your Learning Journey?</h3>
+        <button class="view-all-btn">View All Courses</button>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Alpha Learn. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // JAVASCRIPT CODE
+        document.addEventListener('DOMContentLoaded', () => {
+            const enrollButtons = document.querySelectorAll('.enroll-btn');
+            const logInButton = document.querySelector('.log-in-btn');
+            const exploreButton = document.querySelector('.explore-btn');
+            const viewAllButton = document.querySelector('.view-all-btn');
+
+            // Function to handle enrollment simulation
+            const handleEnrollment = (event) => {
+                const courseName = event.target.getAttribute('data-course');
+                alert(`You are now enrolling in the **${courseName}** course! (This is a simulation)`);
+                console.log(`User clicked enroll for: ${courseName}`);
+            };
+
+            // Add event listeners to all enroll buttons
+            enrollButtons.forEach(button => {
+                button.addEventListener('click', handleEnrollment);
+            });
+
+            // Handle Log In/Sign Up button click
+            logInButton.addEventListener('click', () => {
+                alert("Opening the Log In / Sign Up Modal! (Simulation)");
+                console.log("User clicked Log In / Sign Up");
+            });
+
+            // Handle Explore Courses button click (scrolls to the course section)
+            exploreButton.addEventListener('click', () => {
+                document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+                console.log("User scrolled to Featured Courses");
+            });
+
+            // Handle View All Courses button click
+            viewAllButton.addEventListener('click', () => {
+                alert("Redirecting to the main Course Listing page! (Simulation)");
+                console.log("User clicked View All Courses");
+            });
+        });
+    </script>
+</body>
+</html>
